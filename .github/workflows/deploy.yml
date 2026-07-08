@@ -23,11 +23,11 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -- --configuration=production --base-href=/harry-potter-angular/
+      - run: npm run build -- --configuration=production --base-href=/prueba-evaluable/
 
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: dist/harry-potter-angular/browser
+          path: dist/prueba-evaluable/browser
 
   deploy:
     needs: build
