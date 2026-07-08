@@ -1,0 +1,27 @@
+<div class="container">
+  <h2 class="title">Personajes Harry Potter</h2>
+
+  @if (personajes().length > 0) {
+    <div class="list">
+      @for (p of personajes(); track p.id) {
+        <div class="info">
+          <div class="list">
+            <div class="header">
+              <strong class="name">{{ p.name }}</strong>
+              <img class="image" [src]="p.image" alt="{{ p.name }}" />
+              <span class="house"><strong>Casa:</strong> {{ p.house }}</span>
+              <span class="actor"><strong>Actor/Actriz:</strong> {{ p.actor }}</span>
+              @if (p.alive) {
+                <span class="alive"><strong>Vivo:</strong> Vivo/a</span>
+              } @else {
+                <span class="alive"><strong>Vivo:</strong> Muerto/a</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <small class="empty">No hay personajes</small>
+  }
+</div>
