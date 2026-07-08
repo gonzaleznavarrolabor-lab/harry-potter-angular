@@ -15,17 +15,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
 
       - run: npm ci
 
-      - run: npm run build -- --configuration production --base-href /harry-potter-angular/
+      - run: npm run build -- --configuration=production --base-href=/harry-potter-angular/
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist/harry-potter-angular/browser
 
@@ -42,4 +42,4 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v5
